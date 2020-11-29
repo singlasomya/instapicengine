@@ -24,7 +24,7 @@ class Project extends React.Component {
                         
                         <Router>
                             <main>
-                                <Route exact path="/" component={LoginPage} />
+                                <Route exact path="/" component={this.props.api_token ? ControlPanel : LoginPage} />
                                 <Route exact path="/home/:api_token" component={ControlPanel} />
                                 <Route exact path="/login" component={LoginPage} />
                                 <Route exact path="/register" component={RegisterPage} />
@@ -39,7 +39,8 @@ class Project extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        name: state.name
+        name: state.name,
+	api_token: state.api_token
     }
 }
 

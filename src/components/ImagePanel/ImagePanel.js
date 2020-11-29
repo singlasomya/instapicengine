@@ -31,7 +31,7 @@ class ImagePanel extends React.Component {
               {this.props.remark ? "Remark: " + this.props.remark : ""}
             </span>
             <span className="col-12 m-2">
-              {this.props.name ? "Shared by: " + this.props.name : ""}
+              {this.props.sharedBy ? "Shared by: " + this.props.sharedBy : ""}
             </span>
             <span className="col-12 m-2">
               {this.props.created_at
@@ -47,7 +47,6 @@ class ImagePanel extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    name: state.LoginReducer.name,
     api_token: state.LoginReducer.api_token,
   };
 };

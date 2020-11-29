@@ -76,7 +76,7 @@ class ControlPanel extends React.Component {
     });
   }
   closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.setState({ modalIsOpen: false, isEditRemark: false });
   }
 
   upload_mine_div() {
@@ -236,7 +236,7 @@ class ControlPanel extends React.Component {
             idx={index}
             preview_url={element.original}
             remark={element.remark}
-            name={element.name}
+            sharedBy={element.sharedBy}
             created_at={element.created_at}
             handleClickImg={this.handleClickImg}
           />
@@ -311,7 +311,7 @@ class ControlPanel extends React.Component {
                 </div>
               </div>
             </div>
-            {this.state.modalIsOpen ? (
+            {this.state.modalIsOpen && !this.state.isEditRemark ? (
               <Modal
                 ariaHideApp={false}
                 isOpen={this.state.modalIsOpen}
@@ -337,7 +337,7 @@ class ControlPanel extends React.Component {
                 <div className="col-12 text-center">
                   <h4>Upload Images</h4>
                 </div>
-                <div className="form-group">
+                <div className="form-group d-flex justify-content-center m-3">
                   <label htmlFor="remark col-3">Remark:</label>
                   <input
                     type="remark"

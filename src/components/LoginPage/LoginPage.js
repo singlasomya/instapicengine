@@ -130,6 +130,7 @@ class LoginPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     login: state.login,
+	ap_token: state.api_token
   };
 };
 
