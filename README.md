@@ -5,7 +5,7 @@ Before start please sure you have install
 1) Clone source code
 git clone https://github.com/singlasomya/instapicengine.git
 
-2) Change .env file
+2) Change REACT_APP_API_HOST in .env file
 
 3) npm i
 
